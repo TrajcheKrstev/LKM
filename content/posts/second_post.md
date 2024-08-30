@@ -1,7 +1,7 @@
 +++
 title = 'Second_post'
 date = 2024-08-30T15:39:08+02:00
-draft = true
+draft = false
 author = "siddhantvarma"
 tags = ["foo"]
 +++

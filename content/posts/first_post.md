@@ -1,7 +1,7 @@
 +++
 title = 'First_post'
 date = 2024-08-30T14:44:25+02:00
-draft = true
+draft = false
 author = "trajchekrstev"
 tags = ["foo", "bar"]
 +++
