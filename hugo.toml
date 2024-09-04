@@ -18,3 +18,11 @@ theme = "site-theme"
     pre = "tag"
     url = "/tags/"
     weight = 3
+  [[menu.main]]
+    name = "Authors"
+    pre = "user"
+    url = "/authors/"
+    weight = 4
+
+[params]
+  postsPath = "/posts/"
