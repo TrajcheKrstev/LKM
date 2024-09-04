@@ -1,9 +1,8 @@
 +++
-title = 'Second_post'
-date = 2024-08-30T15:39:08+02:00
-draft = false
-author = "jondoe"
-tags = ["foo"]
+title = 'Third_post'
+date = 2024-09-03T14:12:58+02:00
+draft = true
+authors = ["trajchekrstev", "jondoe"]
 +++
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

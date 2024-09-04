@@ -1,0 +1,8 @@
+{
+  "name": "Jon Doe",
+  "bio": "Howdy Guys! I'm a React and JavaScript Developer from Slovenia. I love watching  movies and creating content for developers",
+  "avatar": "img/authors/placeholder.jpg",
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/jondoe/"
+  }
+}

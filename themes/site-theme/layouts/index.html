@@ -1,8 +1,58 @@
 {{ define "main" }}
+<!-- Hero Section -->
 <div
-  id="home-jumbotron"
-  class="mt-4 p-5 vh-100 bg-secondary text-white rounded text-center"
+  class="p-5 vh-50 bg-secondary text-white d-flex justify-content-center align-items-center"
 >
-  <h1 class="title">{{ .Site.Title }}</h1>
+  <div class="text-center">
+    <h1 class="display-4">{{ .Site.Title }}</h1>
+  </div>
+</div>
+
+<!-- About Section -->
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <p class="lead">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima vero
+        ratione inventore, ipsa optio quae impedit commodi quam cum velit quod.
+        Perspiciatis nisi quod ipsa eos vel adipisci maiores corrupti quis
+        molestiae laborum fugiat ullam porro laudantium, voluptatibus sequi
+        deleniti magni? Voluptate voluptatum a illo nisi necessitatibus autem
+        tempore reprehenderit nostrum, cupiditate fugiat! Quisquam tempora,
+        aperiam saepe maxime minus tempore, porro fugit maiores accusantium quas
+        commodi aut culpa magni sint. Eius deserunt magnam nihil exercitationem,
+        vel eos nemo harum numquam quae id consequuntur corporis corrupti
+        temporibus natus excepturi et optio quam rem velit sed aliquid soluta?
+        Eveniet nam perferendis quae?
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Posts Section -->
+<div class="container my-5">
+  <div class="row">
+    {{ $pages := where site.RegularPages "Section" "posts" }} {{ range $pages }}
+    <div class="col-md-4 mb-4">
+      <div class="card border-secondary">
+        <img
+          src="{{ .Params.cover }}"
+          class="card-img-top"
+          alt="{{ .Title }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{ .RelPermalink }}" class="text-decoration-none text-dark"
+              >{{ .Title }}</a
+            >
+          </h5>
+          {{ partial "metadata.html" . }}
+          <p class="card-text">{{ .Summary }}</p>
+          <a href="{{ .RelPermalink }}" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
 </div>
 {{ end }}
