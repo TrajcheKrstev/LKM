@@ -2,6 +2,7 @@ baseURL = 'https://trajchekrstev.github.io/lkm-site/'
 languageCode = 'en-us'
 title = 'LKM site'
 theme = "site-theme"
+paginate = 3
 [menu]
   [[menu.main]]
     name = "Home"
@@ -22,6 +23,11 @@ theme = "site-theme"
     name = "Authors"
     pre = "user"
     url = "/authors/"
+    weight = 4
+   [[menu.main]]
+    name = "Authors 2"
+    pre = "user"
+    url = "/authors2/"
     weight = 4
 
 [params]

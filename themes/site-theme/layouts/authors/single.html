@@ -20,7 +20,14 @@
     <div class="col-md-8">
       <h2 class="h5">Posts by {{ $author.name }}</h2>
       <ul class="list-group list-group-flush">
-        {{ range where .Site.RegularPages "Params.author" .Params.author }}
+        <!-- Fetch posts where the author is in either Params.author or Params.authors -->
+        {{ $authorName := .Params.author }} {{ range where .Site.RegularPages
+        "Params.authors" "intersect" (slice $authorName) }}
+        <li class="list-group-item">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }} {{ range where .Site.RegularPages "Params.author"
+        .Params.author }}
         <li class="list-group-item">
           <a href="{{ .Permalink }}">{{ .Title }}</a>
         </li>
