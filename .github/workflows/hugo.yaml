@@ -40,7 +40,7 @@ jobs:
       # Pull content from private member repositories
       - name: Pull content from Member 1 repo
         run: |
-          git clone https://${{ secrets.MEMBER1_PAT }}@github.com/trajchekrstev/member1.git content/authors/member1/
+          git clone https://${{ secrets.MEMBER1_PAT }}@github.com/trajchekrstev/member1.git content/members/
 
       # - name: Pull content from Member 2 repo
       #   run: |
