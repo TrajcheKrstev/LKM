@@ -1,7 +1,7 @@
 {{ define "main" }}
 <!-- <h1>{{ .Title }}</h1> -->
 
-{{ $author := index .Site.Data.authors (.Params.author) }}
+{{if .Params.author}} {{ $author := index .Site.Data.authors (.Params.author) }}
 <div class="container mt-5 h-100">
   <div class="row">
     <!-- Author Information Section -->
@@ -36,5 +36,4 @@
     </div>
   </div>
 </div>
-
-{{ end }}
+{{end}} {{ end }}
