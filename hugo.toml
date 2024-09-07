@@ -6,29 +6,11 @@ paginate = 3
 [menu]
   [[menu.main]]
     name = "Home"
-    pre = "home"
     url = "/"
     weight = 1
-  [[menu.main]]
-    name = "Posts"
-    pre = "pen-tool"
-    url = "/posts/"
-    weight = 2
-  [[menu.main]]
-    name = "Tags"
-    pre = "tag"
-    url = "/tags/"
-    weight = 3
-  [[menu.main]]
-    name = "Authors"
-    pre = "user"
-    url = "/authors/"
-    weight = 4
-   [[menu.main]]
-    name = "Authors 2"
-    pre = "user"
-    url = "/authors2/"
-    weight = 4
 
-[params]
-  postsPath = "/posts/"
+  [[menu.main]]
+    name = "Members"
+    url = "/members/"
+    weight = 2
+

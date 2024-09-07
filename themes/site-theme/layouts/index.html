@@ -29,22 +29,27 @@
   </div>
 </div>
 
-<!-- Posts Section -->
+<!-- Members Section -->
 <div class="container my-5">
   <div class="row">
-    {{ $pages := where site.RegularPages "Section" "posts" }} {{ range $pages }}
+    {{ $members := where .Site.Pages "Section" "members" }}
+    <!-- Filter pages by section -->
+    {{ range $members }} {{ if eq .Type "bio" }}
     <div class="col-md-4 mb-4">
       <div class="card border-secondary">
         <img
-          src="{{ .Params.cover }}"
+          src="{{ .Params.cover | relURL }}"
           class="card-img-top"
           alt="{{ .Title }}"
         />
         <div class="card-body">
           <h5 class="card-title">
-            <a href="{{ .RelPermalink }}" class="text-decoration-none text-dark"
-              >{{ .Title }}</a
+            <a
+              href="{{ .RelPermalink }}"
+              class="text-decoration-none text-dark"
             >
+              {{ .Title }}
+            </a>
           </h5>
           {{ partial "metadata.html" . }}
           <p class="card-text">{{ .Summary }}</p>
@@ -52,7 +57,7 @@
         </div>
       </div>
     </div>
-    {{ end }}
+    {{end}} {{ end }}
   </div>
 </div>
 {{ end }}

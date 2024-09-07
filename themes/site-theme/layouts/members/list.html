@@ -1,0 +1,40 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<div
+  class="p-5 vh-50 bg-secondary text-white d-flex justify-content-center align-items-center"
+>
+  <div class="text-center">
+    <h1 class="display-4">Members</h1>
+  </div>
+</div>
+
+<!-- Members List Section -->
+<div class="container my-5">
+  <div class="row">
+    {{ $members := where .Site.Pages "Section" "members" }}
+    <!-- Filter pages by section -->
+    {{ range $members }} {{ if eq .Type "bio" }}
+    <!-- Include only pages of type "list" -->
+    <div class="col-md-4 mb-4">
+      <div class="card border-secondary">
+        <img
+          src="{{ .Params.cover | relURL }}"
+          class="card-img-top"
+          alt="{{ .Title }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{ .RelPermalink }}" class="text-decoration-none text-dark"
+              >{{ .Title }}</a
+            >
+          </h5>
+          {{ partial "metadata.html" . }}
+          <p class="card-text">{{ .Summary }}</p>
+          <a href="{{ .RelPermalink }}" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    {{ end }} {{ end }}
+  </div>
+</div>
+{{ end }}

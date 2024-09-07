@@ -1,0 +1,49 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<div
+  class="p-5 vh-50 bg-secondary text-white d-flex justify-content-center align-items-center"
+>
+  <div class="text-center">
+    <h1 class="display-4">{{ .Title }}</h1>
+  </div>
+</div>
+
+<!-- Member Bio Section -->
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4 text-center">
+      {{ $title := .Title }}
+      <!-- Profile Picture -->
+      {{ with .Params.cover }}
+      <img
+        src="{{ . | relURL }}"
+        alt="{{ $title }}"
+        class="img-fluid rounded-circle mb-3"
+        style="width: 150px; height: 150px; object-fit: cover"
+      />
+      {{ end }}
+    </div>
+
+    <div class="col-md-8">
+      <!-- Bio -->
+      <h2 class="h4">Bio</h2>
+      <p>{{ .Params.bio }}</p>
+
+      <!-- Posts Section -->
+      <h3 class="h5">Posts by {{ .Title }}</h3>
+      <ul class="list-group list-group-flush">
+        {{ $memberPosts := where .Site.RegularPages "Params.author" .Title }} {{
+        $sortedPosts := sort $memberPosts "Date" "desc" }}
+        <!-- Sort posts by date in descending order -->
+        {{ range $sortedPosts }}
+        <li class="list-group-item">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <span class="text-muted">({{ .Date.Format "Jan 2, 2006" }})</span>
+          <!-- Display post date -->
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</div>
+{{ end }}
