@@ -1,7 +1,9 @@
 {{ define "main" }}
 <!-- Hero Section -->
+
 <div
   class="p-5 vh-50 bg-secondary text-white d-flex justify-content-center align-items-center"
+  style="background: url('{{ .Params.cover | relURL }}') no-repeat center center/cover;"
 >
   <div class="text-center">
     <h1 class="display-4">{{ .Title }}</h1>
@@ -14,7 +16,7 @@
     <div class="col-md-4 text-center">
       {{ $title := .Title }}
       <!-- Profile Picture -->
-      {{ with .Params.cover }}
+      {{ with .Params.avatar }}
       <img
         src="{{ . | relURL }}"
         alt="{{ $title }}"
@@ -28,6 +30,7 @@
       <!-- Bio -->
       <h2 class="h4">Bio</h2>
       <p>{{ .Params.bio }}</p>
+      <p>{{ .Content }}</p>
 
       <!-- Posts Section -->
       <h3 class="h5">Posts by {{ .Title }}</h3>
