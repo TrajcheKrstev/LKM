@@ -8,9 +8,16 @@ paginate = 3
     name = "Home"
     url = "/"
     weight = 1
-
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
   [[menu.main]]
     name = "Members"
     url = "/members/"
-    weight = 2
+    weight = 3
+  [[menu.main]]
+    name = "Research"
+    url = "/research/" 
+    weight = 4
 
