@@ -10,6 +10,7 @@
 
 <!-- Members List Section -->
 <div class="container my-5">
+  {{.Content}}
   <div class="row">
     {{ $members := where .Site.Pages "Section" "members" }}
     <!-- Filter pages by section -->
